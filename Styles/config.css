@@ -54,7 +54,7 @@
 #game-config h3 {
     font-size: 1.5rem;
     margin: 0.5rem 0;
-    color: blueviolet;
+    color: rgb(109, 5, 207);
 
 }
 
@@ -62,5 +62,5 @@
     font-size: 2rem;
     font-weight: bold;
     margin: 0.5rem 0;
-    color: rgb(91, 13, 163);
+    color: rgb(109, 5, 207);
 }
