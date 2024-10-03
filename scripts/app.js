@@ -1,6 +1,7 @@
 const playerConfigOverlay = document.getElementById('config-overlay');
 const backdrop = document.getElementById('backdrop');
 const formElement = document.querySelector('form');
+const errorOutput = document.getElementById('config-error');
 
 const editPlayer1 = document.getElementById('edit-player1');
 const editPlayer2 = document.getElementById('edit-player1');
