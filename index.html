@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/Styles/overlays.css">
 <link rel="stylesheet" href="/Styles/config.css">
 <link rel="stylesheet" href="/Styles/game.css">
-<script src="scripts/config.js" defer></script>
+<script src="/scripts/config.js" defer></script>
 <script src="scripts/game.js" defer></script>
 <script src="/scripts/app.js" defer></script>
 </head>
@@ -57,7 +57,7 @@
                     </article>
                 </li>
             </ol>
-            <button class="btn">Start New Game</button>
+            <button class="btn" id="start-game-btn">Start New Game</button>
         </section>
         <section id="game">
             <article id="game-over">
@@ -66,15 +66,15 @@
             </article>
             <p>It's your turn <span id="active-player">PLAYER NAME</span>!</p>
             <ol id="game-board">
-                <li class="disabled">X</li>
                 <li></li>
-                <li class="disabled">O</li>
-
                 <li></li>
-                <li class="disabled">O</li>
                 <li></li>
 
-                <li class="disabled">O</li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
                 <li></li>
                 <li></li>
             </ol>
