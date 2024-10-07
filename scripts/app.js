@@ -26,12 +26,13 @@ const formElement = document.querySelector('form');
 const errorOutput = document.getElementById('config-error');
 const gameArea = document.getElementById('game');
 const activePlayerName = document.getElementById('active-player');
+const gameOverElement = document.getElementById('game-over');
 
 const editPlayer1 = document.getElementById('edit-player1');
 const editPlayer2 = document.getElementById('edit-player2');
 const cancelConfig = document.getElementById('cancel-config');
 const startNewGame = document.getElementById('start-game-btn');
-const gameFields = document.querySelectorAll('#game-board li');
+const gameFields = document.getElementById('game-board');
 
 function openPlayerConfig(event) {
   editedPlayer = +event.target.dataset.playerid;
@@ -76,6 +77,6 @@ formElement.addEventListener('submit', savePlayer);
 
 startNewGame.addEventListener('click',startGame);
 
-for (const gameField of gameFields){
+for (const gameField of gameFields.children){
   gameField.addEventListener('click',selectGameField);
 }
