@@ -1,5 +1,12 @@
 // app.js
+const gameData = [
+  [0,0,0],
+  [0,0,0],
+  [0,0,0],
+];
+
 let editedPlayer = 0;
+let activePlayer = 0;
 
 const players = [
   {
@@ -17,11 +24,13 @@ const backdrop = document.getElementById('backdrop');
 const formElement = document.querySelector('form');
 const errorOutput = document.getElementById('config-error');
 const gameArea = document.getElementById('game');
+const activePlayerName = document.getElementById('active-player');
 
 const editPlayer1 = document.getElementById('edit-player1');
 const editPlayer2 = document.getElementById('edit-player2');
 const cancelConfig = document.getElementById('cancel-config');
 const startNewGame = document.getElementById('start-game-btn');
+const gameFields = document.querySelectorAll('#game-board li');
 
 function openPlayerConfig(event) {
   editedPlayer = +event.target.dataset.playerid;
@@ -65,3 +74,7 @@ backdrop.addEventListener('click', closePlayerConfig);
 formElement.addEventListener('submit', savePlayer);
 
 startNewGame.addEventListener('click',startGame);
+
+for (const gameField of gameFields){
+  gameField.addEventListener('click',selectGameField);
+}
