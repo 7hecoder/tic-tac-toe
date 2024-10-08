@@ -1,88 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe - 2 Player Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="Styles/styles.css">
-<link rel="stylesheet" href="/Styles/overlays.css">
-<link rel="stylesheet" href="/Styles/config.css">
-<link rel="stylesheet" href="/Styles/game.css">
-<script src="/scripts/config.js" defer></script>
-<script src="scripts/game.js" defer></script>
-<script src="/scripts/app.js" defer></script>
-</head>
-<body>
+    <meta property="og:title" content="Tic Tac Toe - 2 Player Game" />
+    <meta property="og:description"
+      content="Tic Tac Toe 2 Players: Play a Tic Tac Toe game online with your friends."
+    />
+    <meta property="og:image"content="/Assets/webSS.png" />
+    <meta property="og:url" content="https://tictactoe247.netlify.app/" />
+    <link rel="icon" type="image/png" href="/Assets/tic-tac-toe_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Sixtyfour+Convergence&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Styles/styles.css" />
+    <link rel="stylesheet" href="/Styles/overlays.css" />
+    <link rel="stylesheet" href="/Styles/config.css" />
+    <link rel="stylesheet" href="/Styles/game.css" />
+    <script src="/scripts/config.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="/scripts/app.js" defer></script>
+  </head>
+  <body>
     <div id="backdrop"></div>
     <header id="main-head">
-        <h1>Tic Tac Toe</h1>
-        <p>Play Online With Your Friends!</p>
+      <h1>Tic Tac Toe</h1>
+      <p>Play Online With Your Friends!</p>
     </header>
 
     <main>
-        <aside class="modal" id="config-overlay">
-            <!-- we use aside tag to add additional content that is not main -->
-            <h2>Choose your name</h2>
-            <form class="form-control">
-                <div>
-                    <label for="playername">Player Name</label>
-                    <input type="text" name="playername" id="playername">
-                </div>
-                <p id="config-error"></p>
-                <div>
-                    <button type="reset" class="btn-alt" id="cancel-config">Cancel</button>
-                    <button type="submit" class="btn">Confirm</button>
-                </div>
-            </form>
-        </aside>
-        <section id="game-config">
-            <ol>
-                <li>
-                    <article id="player-1-data">
-                        <h2>Player 1</h2>
-                        <h3>PLAYER NAME</h3>
-                        <P class="player-symb">X</P>
-                        <button class="btn btn-alt" id="edit-player1" data-playerid="1"="">Edit</button>
-                    </article>
-                </li>
-                <li>
-                    <article id="player-2-data">
-                        <h2>Player 2</h2>
-                        <h3>PLAYER NAME</h3>
-                        <P class="player-symb">O</P>
-                        <button class="btn btn-alt" id="edit-player2" data-playerid="2">Edit</button>
-                    </article>
-                </li>
-            </ol>
-            <button class="btn" id="start-game-btn">Start New Game</button>
-        </section>
-        <section id="game">
-            <article id="game-over">
-                <h3>You won, <span id="winner-name">PLAYER NAME</span>!</h3>
-                <p>Click "Start New Game" above, to start a new game!</p>
+      <aside class="modal" id="config-overlay">
+        <!-- we use aside tag to add additional content that is not main -->
+        <h2>Choose your name</h2>
+        <form class="form-control">
+          <div>
+            <label for="playername">Player Name</label>
+            <input type="text" name="playername" id="playername" />
+          </div>
+          <p id="config-error"></p>
+          <div>
+            <button type="reset" class="btn-alt" id="cancel-config">
+              Cancel
+            </button>
+            <button type="submit" class="btn">Confirm</button>
+          </div>
+        </form>
+      </aside>
+      <section id="game-config">
+        <ol>
+          <li>
+            <article id="player-1-data">
+              <h2>Player 1</h2>
+              <h3>PLAYER NAME</h3>
+              <p class="player-symb">X</p>
+              <button
+                class="btn btn-alt"
+                id="edit-player1"
+                data-playerid="1"
+                =""
+              >
+                Edit
+              </button>
             </article>
-            <p>It's your turn <span id="active-player">PLAYER NAME</span>!</p>
-            <ol id="game-board">
-                <li data-col="1" data-row="1"></li>
-                <li data-col="2" data-row="1"></li>
-                <li data-col="3" data-row="1"></li>
+          </li>
+          <li>
+            <article id="player-2-data">
+              <h2>Player 2</h2>
+              <h3>PLAYER NAME</h3>
+              <p class="player-symb">O</p>
+              <button class="btn btn-alt" id="edit-player2" data-playerid="2">
+                Edit
+              </button>
+            </article>
+          </li>
+        </ol>
+        <button class="btn" id="start-game-btn">Start New Game</button>
+      </section>
+      <section id="game">
+        <article id="game-over">
+          <h3>You won, <span id="winner-name">PLAYER NAME</span>!</h3>
+          <p>Click "Start New Game" above, to start a new game!</p>
+        </article>
+        <p>It's your turn <span id="active-player">PLAYER NAME</span>!</p>
+        <ol id="game-board">
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
 
-                <li data-col="1" data-row="2"></li>
-                <li data-col="2" data-row="2"></li>
-                <li data-col="3" data-row="2"></li>
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
 
-                <li data-col="1" data-row="3"></li>
-                <li data-col="2" data-row="3"></li>
-                <li data-col="3" data-row="3"></li>
-            </ol>
-        </section>
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
+        </ol>
+      </section>
     </main>
-
-</body>
-<footer>
+  </body>
+  <footer>
     <p>Coded by <a href="https://x.com/@7hecoder" target="_blank">AK</a></p>
-</footer>
+  </footer>
 </html>
