@@ -1,6 +1,7 @@
 function resetGame() {
   activePlayer = 0;
   currentRound = 1;
+  gameIsOver = false;
   gameOverElement.firstElementChild.innerHTML =
     'You won, <span id="winner-name">PLAYER NAME</span>!';
   gameOverElement.style.display = "none";
@@ -38,7 +39,7 @@ function switchPlayer() {
 }
 
 function selectGameField(event) {
-  if (event.target.tagName !== 'LI'){
+  if (event.target.tagName !== 'LI' || gameIsOver){
     return;
   }
 
@@ -119,6 +120,7 @@ function checkForGameOver() {
 }
 
 function endGame(winnerID) {
+  gameIsOver = true;
   gameOverElement.style.display = "block";
 
   if (winnerID > 0) {
@@ -128,4 +130,5 @@ function endGame(winnerID) {
   } else {
     gameOverElement.firstElementChild.textContent = "It's a draw!";
   }
+  activePlayerName.textContent = "Game is over!";
 }
